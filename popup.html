@@ -1,0 +1,135 @@
+<html>
+  <head>
+	<title>My First Chrome Extension</title>
+	<meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/bootstrap_4_minifier.css">
+  <style>
+    body{
+      background-color: #e8e8e8;
+      color: #6d6d6d;
+      width: 270px;
+      min-height: 100px;
+      padding: 10px;
+    }
+    .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.center{
+  text-align: center;
+}
+.toggle_tools .item{
+  padding: 5px;
+  margin: 5px 0;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.toggle_tools .item .align-ver{
+  margin: auto 0 auto 0;
+}
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #999999;
+}
+.author_section{
+  float: right;
+  font-size: 12px;
+}
+  </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="toggle_tools">
+        <div class="center item">
+          <div class="title align-ver">Tự động làm online</div>
+          <label class="switch align-ver"><input id="task_toggle" type="checkbox"><span class="slider round align-ver"></span></label>
+        </div>
+        <div class="center item" style="display: none;">
+          <div class="title align-ver">Tự động làm unit Test</div>
+          <label class="switch align-ver"><input id="test_toggle" type="checkbox"><span class="slider round align-ver"></span></label>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="toggle_tools">
+        <div class="center item">
+          <div class="title align-ver">Thời gian làm bài</div>
+          <div style="display: flex;">
+            <select name="timeInterval" id="timeInterval">
+              <option value="2000">2 giây</option>
+              <option value="60000">1 phút</option>
+              <option value="300000">5 phút</option>
+              <option value="1800000">30 phút</option>
+              <option value="3600000">1 giờ</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    <div class="author_section">
+      <a href="javascript:void(0);" url="https://www.facebook.com/CXTBB" class="facebook_link" id="facebook_link">
+        Liên hệ DevTu!
+      </a>
+    </div>
+    <script type="module" src="js/js.cookie.min.js"></script>
+    <script src="js/font_awesome.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery_v3.5.1.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>
